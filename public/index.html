@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FCC Timestamp API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>FCC Timestamp Microservice</h1>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Usage</div>
+            <div class="panel-body">
+                <code>https://api-projects-savageboy74.c9users.io/{date}</code>
+                <br>
+                <br>
+                <p><code>{date}</code> can be a unix timestamp <code><span id="unix"></span></code> or a date in "natural" <code><span id="natural"></span></code> format.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script type="text/javascript">
+        $(() => {
+            var unix = $("#unix")
+            var natural = $("#natural")
+            
+            unix.text(moment().format("X"))
+            natural.text(moment().format("MMMM D, YYYY"))
+        })
+    </script>
+</body>
+</html>
